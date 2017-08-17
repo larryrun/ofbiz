@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entitymodel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:noNamespaceSchemaLocation="http://www.ofbiz.org/dtds/entitymodel.xsd">
+
+    <entity entity-name="ProductIndustrialAttrDef" package-name="com.vortex.erp">
+        <field name="attrId" type="id"/>
+        <field name="attrName" type="name"/>
+        <field name="productIndustrialType" type="name"/>
+        <field name="sortOrder" type="numeric"/>
+        <field name="attrType" type="name"/>
+        <field name="fromDate" type="date-time"/>
+        <field name="thruDate" type="date-time"/>
+        <prim-key field="attrId"/>
+    </entity>
+
+    <entity entity-name="ProductIndustrialAttrValEnum" package-name="com.vortex.erp">
+        <field name="enumId" type="id"/>
+        <field name="attrId" type="id"/>
+        <field name="displayName" type="name"/>
+        <field name="enumValue" type="value"/>
+        <field name="enumCode" type="name"/>
+        <field name="sortOrder" type="numeric"/>
+        <field name="fromDate" type="date-time"/>
+        <field name="thruDate" type="date-time"/>
+        <prim-key field="enumId"/>
+        <relation type="one" fk-name="PROD_INDUST_ATTR" rel-entity-name="ProductIndustrialAttrDef">
+            <key-map field-name="attrId" rel-field-name="attrId"/>
+        </relation>
+    </entity>
+
+</entitymodel>

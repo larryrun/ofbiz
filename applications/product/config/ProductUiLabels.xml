@@ -9888,6 +9888,15 @@
         <value xml:lang="zh">编辑产品属性</value>
         <value xml:lang="zh-TW">編輯產品屬性</value>
     </property>
+
+    <!-- Changes by Vortex, new, larry -->
+    <property key="PageTitleEditProductIndustrialAttributes">
+        <value xml:lang="en">Edit Product Industrial Attributes</value>
+        <value xml:lang="zh">编辑产品行业属性</value>
+        <value xml:lang="zh-TW">編輯產品行業屬性</value>
+    </property>
+    <!-- Changes End -->
+
     <property key="PageTitleEditProductCatalog">
         <value xml:lang="de">Produktkatalog bearbeiten</value>
         <value xml:lang="en">Edit Product Catalog</value>
@@ -13652,6 +13661,22 @@
         <value xml:lang="zh">属性</value>
         <value xml:lang="zh-TW">屬性</value>
     </property>
+    <!-- Changes by Vortex, larry -->
+    <property key="ProductIndustrialAttributes">
+        <value xml:lang="de">IndustrialAttribute</value>
+        <value xml:lang="en">IndustrialAttributes</value>
+        <value xml:lang="es">IndustrialAtributos</value>
+        <value xml:lang="fr">IndustrialAttributs</value>
+        <value xml:lang="it">IndustrialAttributi</value>
+        <value xml:lang="ja">行业属性</value>
+        <value xml:lang="ro">IndustrialAtribute</value>
+        <value xml:lang="ru">IndustrialАтрибуты</value>
+        <value xml:lang="th">Industrialลักษณะ</value>
+        <value xml:lang="vi">IndustrialThuộc tính</value>
+        <value xml:lang="zh">行业属性</value>
+        <value xml:lang="zh-TW">行業屬性</value>
+    </property>
+    <!-- Changes End -->
     <property key="ProductAutoCreateCosts">
         <value xml:lang="de">Automatisches Berechnen Kosten</value>
         <value xml:lang="en">Auto-Calculate Costs</value>

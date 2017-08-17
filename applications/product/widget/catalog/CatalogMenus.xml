@@ -390,6 +390,16 @@ under the License.
                 <parameter param-name="productId"/>
             </link>
         </menu-item>
+
+        <!-- Changes by Vortex, larry -->
+        <menu-item name="EditProductIndustrialAttributes" title="${uiLabelMap.ProductIndustrialAttributes}">
+            <link target="EditProductIndustrialAttributes">
+                <parameter param-name="productId"/>
+                <parameter param-name="industrialType" from-field="product.industrialType"/>
+            </link>
+        </menu-item>
+        <!-- Changes End -->
+
         <menu-item name="EditProductFeatures" title="${uiLabelMap.ProductFeatures}">
             <link target="EditProductFeatures">
                 <parameter param-name="productId"/>

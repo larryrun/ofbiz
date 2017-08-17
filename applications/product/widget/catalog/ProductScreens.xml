@@ -1015,6 +1015,37 @@ under the License.
             </widgets>
         </section>
     </screen>
+
+    <!-- Changes by Vortex, larry -->
+    <screen name="EditProductIndustrialAttributes">
+        <section>
+            <actions>
+                <set field="titleProperty" value="PageTitleEditProductIndustrialAttributes"/>
+                <set field="tabButtonItem" value="EditProductIndustrialAttributes"/>
+                <set field="labelTitleProperty" value="ProductIndustrialAttributes"/>
+
+                <entity-and entity-name="ProductAttribute" list="productAttributes">
+                    <field-map field-name="productId" from-field="parameters.productId"/>
+                </entity-and>
+                <entity-and entity-name="ProductIndustrialAttrDef" list="productIndustrialAttrDefs" filter-by-date="true">
+                    <field-map field-name="productIndustrialType" from-field="parameters.industrialType"/>
+                </entity-and>
+            </actions>
+            <widgets>
+                <decorator-screen name="CommonProductDecorator" location="${parameters.productDecoratorLocation}">
+                    <decorator-section name="body">
+                        <screenlet title="${uiLabelMap.PageTitleEditProductIndustrialAttributes}">
+                            <platform-specific>
+                                <html><html-template location="component://industrial/template/product/EditProductIndustrialAttribute.ftl"/></html>
+                            </platform-specific>
+                        </screenlet>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <!-- End Changes -->
+
     <screen name="EditProductAssoc">
         <section>
             <actions>
