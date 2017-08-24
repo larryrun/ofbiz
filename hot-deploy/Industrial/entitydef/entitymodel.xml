@@ -2,29 +2,77 @@
 <entitymodel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:noNamespaceSchemaLocation="http://www.ofbiz.org/dtds/entitymodel.xsd">
 
-    <entity entity-name="ProductIndustrialAttrDef" package-name="com.vortex.erp">
-        <field name="attrId" type="id"/>
-        <field name="attrName" type="name"/>
-        <field name="productIndustrialType" type="name"/>
+    <entity entity-name="ProductIndustrialCategory"
+            package-name="com.vortex.erp"
+            title="Product Industrial Category Entity">
+        <field name="categoryId" type="id"/>
+        <field name="categoryName" type="name"/>
+        <field name="categoryCode" type="name"/>
         <field name="sortOrder" type="numeric"/>
-        <field name="attrType" type="name"/>
         <field name="fromDate" type="date-time"/>
         <field name="thruDate" type="date-time"/>
-        <prim-key field="attrId"/>
+
+        <prim-key field="categoryId"/>
     </entity>
 
-    <entity entity-name="ProductIndustrialAttrValEnum" package-name="com.vortex.erp">
+    <entity entity-name="ProductIndustrialAttrDef"
+            package-name="com.vortex.erp"
+            title="Product Industrial Attribute Define Entity">
+        <field name="attrDefId" type="id"/>
+        <field name="categoryId" type="id"/>
+        <field name="attrName" type="name"/>
+        <field name="attrType" type="name"/>
+        <field name="sortOrder" type="numeric"/>
+        <field name="attrDescription" type="description"/>
+        <field name="fromDate" type="date-time"/>
+        <field name="thruDate" type="date-time"/>
+
+        <prim-key field="attrDefId"/>
+
+        <relation type="many" fk-name="PROD_INDUST_ATTR_DEF_CAT" rel-entity-name="ProductIndustrialCategory">
+            <key-map field-name="categoryId"/>
+        </relation>
+    </entity>
+
+    <entity entity-name="ProductIndustrialAttrValEnum"
+            package-name="com.vortex.erp"
+            title="Product Industrial Attribute Value Enum Entity">
         <field name="enumId" type="id"/>
-        <field name="attrId" type="id"/>
+        <field name="attrDefId" type="id"/>
         <field name="displayName" type="name"/>
         <field name="enumValue" type="value"/>
         <field name="enumCode" type="name"/>
         <field name="sortOrder" type="numeric"/>
         <field name="fromDate" type="date-time"/>
         <field name="thruDate" type="date-time"/>
+
         <prim-key field="enumId"/>
-        <relation type="one" fk-name="PROD_INDUST_ATTR" rel-entity-name="ProductIndustrialAttrDef">
-            <key-map field-name="attrId" rel-field-name="attrId"/>
+
+        <relation type="one" fk-name="PROD_INDUST_ATTR_ENUM_DEF" rel-entity-name="ProductIndustrialAttrDef">
+            <key-map field-name="attrDefId" rel-field-name="attrDefId"/>
+        </relation>
+    </entity>
+
+    <entity entity-name="ProductIndustrialAttr"
+            package-name="com.vortex.erp"
+            title="Product Industrial Attribute Entity">
+        <field name="attrId" type="id"/>
+        <field name="productId" type="id"/>
+        <field name="attrDefId" type="id"/>
+        <field name="attrValue" type="value"/>
+        <field name="code" type="value"/>
+        <field name="enumId" type="value"/>
+
+        <prim-key field="attrId"/>
+
+        <relation type="one" fk-name="PROD_INDUST_ATTR_PROD" rel-entity-name="Product">
+            <key-map field-name="productId"/>
+        </relation>
+        <relation type="one" fk-name="PROD_INDUST_ATTR_DEF" rel-entity-name="ProductIndustrialAttrDef">
+            <key-map field-name="attrDefId"/>
+        </relation>
+        <relation type="one" fk-name="PROD_INDUST_ATTR_ENUM" rel-entity-name="ProductIndustrialAttrValEnum">
+            <key-map field-name="enumId"/>
         </relation>
     </entity>
 

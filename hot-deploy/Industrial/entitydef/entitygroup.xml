@@ -1,7 +1,9 @@
 <entitygroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/entitygroup.xsd">
 
-    <entity-group group="org.apache.ofbiz" entity="ProductIndustrialAttribute"/>
-    <entity-group group="org.apache.ofbiz" entity="ProductIndustrialAttributeEnum"/>
+    <entity-group group="org.apache.ofbiz" entity="ProductIndustrialCategory"/>
+    <entity-group group="org.apache.ofbiz" entity="ProductIndustrialAttrDef"/>
+    <entity-group group="org.apache.ofbiz" entity="ProductIndustrialAttrValEnum"/>
+    <entity-group group="org.apache.ofbiz" entity="ProductIndustrialAttr"/>
 
 </entitygroup>

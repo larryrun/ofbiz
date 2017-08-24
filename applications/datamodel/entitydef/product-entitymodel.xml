@@ -2777,7 +2777,7 @@ under the License.
       <field name="lotIdFilledIn" type="long-varchar"><description>Indicate if the lotId must be informed</description></field>
       <field name="orderDecimalQuantity" type="indicator"><description>use to indicate if decimal quantity can be ordered for this product. Default value is Y</description></field>
       <!-- Changes by Vortex, new, larry -->
-      <field name="industrialType" type="name"><description>Special attributes for industrial</description></field>
+      <field name="industrialCategoryId" type="id"><description>Special attributes for industrial</description></field>
       <!-- Changes End-->
       <prim-key field="productId"/>
       <relation type="one" fk-name="PROD_TYPE" rel-entity-name="ProductType">
@@ -2843,7 +2843,11 @@ under the License.
       <relation type="one" fk-name="PROD_INV_ITEM_TYPE" rel-entity-name="InventoryItemType">
           <key-map field-name="inventoryItemTypeId" rel-field-name="inventoryItemTypeId"/>
       </relation>
-
+        <!-- Changes by Vortex, new, larry -->
+        <relation type="one" fk-name="PROD_INDUST_CAT" rel-entity-name="ProductIndustrialCategory">
+            <key-map field-name="industrialCategoryId" rel-field-name="categoryId"/>
+        </relation>
+        <!-- Changes End -->
     </entity>
     <entity entity-name="ProductAssoc"
             package-name="org.apache.ofbiz.product.product"
@@ -2947,20 +2951,12 @@ under the License.
       <field name="attrName" type="id-long-ne"></field>
       <field name="attrValue" type="value"></field>
       <field name="attrType" type="value"></field>
-        <!-- Changes by Vortex, new, larry -->
-      <field name="industrialAttrId" type="id"></field>
-        <!-- Changes End -->
       <field name="attrDescription" type="description"></field>
       <prim-key field="productId"/>
       <prim-key field="attrName"/>
       <relation type="one" fk-name="PROD_ATTR" rel-entity-name="Product">
         <key-map field-name="productId"/>
       </relation>
-        <!-- Changes by Vortex, new, larry -->
-      <relation type="one" fk-name="PROD_ATTR_INDUST_DEF" rel-entity-name="ProductIndustrialAttrDef">
-          <key-map field-name="industrialAttrId" rel-field-name="attrId"/>
-      </relation>
-        <!-- Changes End -->
       <relation type="many" rel-entity-name="ProductTypeAttr">
         <key-map field-name="attrName"/>
       </relation>

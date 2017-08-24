@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/ofbiz-properties.xsd">
+
+    <property key="EditProductIndustrialCategory">
+        <value xml:lang="en">Edit Product Industrial Category</value>
+        <value xml:lang="zh">编辑产品行业类别</value>
+        <value xml:lang="zh-CN">编辑产品行业类别</value>
+        <value xml:lang="zh-TW">編輯產品行業類別</value>
+    </property>
+
+    <property key="PageTitleEditProductIndustrialAttributes">
+        <value xml:lang="en">Edit Product Industrial Attributes</value>
+        <value xml:lang="zh">编辑产品行业属性</value>
+        <value xml:lang="zh-CN">编辑产品行业属性</value>
+        <value xml:lang="zh-TW">編輯產品行業屬性</value>
+    </property>
+
+    <property key="ProductIndustrialAttributes">
+        <value xml:lang="en">Industrial Attributes</value>
+        <value xml:lang="zh">行业属性</value>
+        <value xml:lang="zh-CN">行业属性</value>
+        <value xml:lang="zh-TW">行業屬性</value>
+    </property>
+
+    <property key="ProductIndustrialAttributesValue">
+        <value xml:lang="en">Attribute Value</value>
+        <value xml:lang="zh">属性值</value>
+        <value xml:lang="zh-CN">属性值</value>
+        <value xml:lang="zh-TW">屬性值</value>
+    </property>
+
+    <property key="ProductIndustrialCategory">
+        <value xml:lang="en">Category</value>
+        <value xml:lang="zh">类别</value>
+        <value xml:lang="zh-CN">类别</value>
+        <value xml:lang="zh-TW">類別</value>
+    </property>
+
+</resource>

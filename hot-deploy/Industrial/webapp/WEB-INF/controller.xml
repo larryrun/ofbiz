@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<site-conf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns="http://ofbiz.apache.org/Site-Conf" xsi:schemaLocation="http://ofbiz.apache.org/Site-Conf http://ofbiz.apache.org/dtds/site-conf.xsd">
+
+    <!-- ================ Product Industrial Attributes Requests ================= -->
+    <request-map uri="EditProductIndustrialAttributes">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="EditProductIndustrialAttributes"/>
+    </request-map>
+    <request-map uri="processProductIndustrialCategoryEditForm">
+        <security https="true" auth="true"/>
+        <event type="service" path="component://product/servicedef/services.xml" invoke="updateProduct"/>
+        <response name="success" type="view" value="EditProductIndustrialAttributes"/>
+        <response name="error" type="view" value="EditProductIndustrialAttributes"/>
+    </request-map>
+    <request-map uri="saveProductIndustrialAttribute">
+        <security https="true" auth="true"/>
+        <event type="service" path="component://industrial" invoke="saveProductIndustrialAttribute"/>
+        <response name="success" type="view" value="EditProductIndustrialAttributes"/>
+        <response name="error" type="view" value="EditProductIndustrialAttributes"/>
+    </request-map>
+
+    <view-map name="EditProductIndustrialAttributes" type="screen" page="component://industrial/widget/product/IndustrialScreens.xml#EditProductIndustrialAttributes"/>
+
+</site-conf>

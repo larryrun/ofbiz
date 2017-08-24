@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://ofbiz.apache.org/Widget-Form" xsi:schemaLocation="http://ofbiz.apache.org/Widget-Form http://ofbiz.apache.org/dtds/widget-form.xsd">
+
+    <form name="ProductIndustrialCategoryEditForm" type="single" target="processProductIndustrialCategoryEditForm">
+        <field name="productId"><hidden/></field>
+        <field name="industrialCategoryId" title="${uiLabelMap.ProductIndustrialCategory}" entry-name="product.industrialCategoryId">
+            <drop-down allow-empty="false" current="selected">
+                <entity-options description="${categoryName}"
+                                entity-name="ProductIndustrialCategory"
+                                key-field-name="categoryId"
+                                filter-by-date="true">
+                    <entity-order-by field-name="sortOrder"/>
+                </entity-options>
+            </drop-down>
+        </field>
+        <field name="submitButton" title="${uiLabelMap.CommonUpdate}"><submit button-type="button"/></field>
+    </form>
+
+    <form name="ProductIndustrialAttrEditForm" type="multi" list-name="productIndustrialAttrDefs" target="processProductIndustrialAttrEditForm">
+        <field name="productId"><hidden/></field>
+        <field name="attrDefId"><hidden value="${attrDefId}"/></field>
+        <field name="attrName" title="${uiLabelMap.ProductIndustrialAttributes}"><display/></field>
+        <field name="attrValue" title="${uiLabelMap.ProductIndustrialAttributesValue}"><text/></field>
+        <field name="submitButton" title="${uiLabelMap.CommonUpdate}"><submit button-type="button"/></field>
+    </form>
+
+</forms>

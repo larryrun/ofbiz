@@ -23,6 +23,9 @@ under the License.
     <include location="component://common/webcommon/WEB-INF/common-controller.xml"/>
     <include location="component://common/webcommon/WEB-INF/portal-controller.xml"/>
     <include location="component://commonext/webapp/WEB-INF/controller.xml"/>
+    <!-- Changes by vortex, larry -->
+    <include location="component://industrial/webapp/WEB-INF/controller.xml"/>
+    <!-- Changes End -->
     <description>Catalog Module Site Configuration File</description>
     
 
@@ -931,20 +934,6 @@ under the License.
         <response name="success" type="view" value="EditProductAttributes"/>
         <response name="error" type="view" value="EditProductAttributes"/>
     </request-map>
-
-    <!-- Changes by Vortex, new, larry -->
-    <!-- ================ Product Industrial Attributes Requests ================= -->
-    <request-map uri="EditProductIndustrialAttributes">
-        <security https="true" auth="true"/>
-        <response name="success" type="view" value="EditProductIndustrialAttributes"/>
-    </request-map>
-    <request-map uri="saveProductIndustrialAttribute">
-        <security https="true" auth="true"/>
-        <event type="service" path="component://industrial" invoke="saveProductIndustrialAttribute"/>
-        <response name="success" type="view" value="EditProductIndustrialAttributes"/>
-        <response name="error" type="view" value="EditProductIndustrialAttributes"/>
-    </request-map>
-    <!-- Changes End -->
 
     <!-- ================ Product Facilities Requests ================= -->
     <request-map uri="EditProductFacilities">
@@ -3130,9 +3119,6 @@ under the License.
     <view-map name="EditProductCosts" type="screen" page="component://product/widget/catalog/ProductScreens.xml#EditProductCosts"/>
 
     <view-map name="EditProductAttributes" type="screen" page="component://product/widget/catalog/ProductScreens.xml#EditProductAttributes"/>
-    <!-- Changes by Vortex, new, larry -->
-    <view-map name="EditProductIndustrialAttributes" type="screen" page="component://product/widget/catalog/ProductScreens.xml#EditProductIndustrialAttributes"/>
-    <!-- Changes End -->
     <view-map name="EditProductFeatures" type="screen" page="component://product/widget/catalog/ProductScreens.xml#EditProductFeatures"/>
     <view-map name="ApplyFeaturesFromCategory" type="screen" page="component://product/widget/catalog/ProductScreens.xml#ApplyFeaturesFromCategory"/>
     <view-map name="EditProductFacilities" type="screen" page="component://product/widget/catalog/ProductScreens.xml#EditProductFacilities"/>

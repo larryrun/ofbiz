@@ -30,6 +30,9 @@ under the License.
                 <set field="headerItem" value="products"/>
                 <property-map resource="PartyUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="OrderUiLabels" map-name="uiLabelMap" global="true"/>
+                <!-- Changed by Vortex, larry-->
+                <property-map resource="IndustrialLabels" map-name="uiLabelMap" global="true"/>
+                <!-- Changes End -->
                 <set field="productId" from-field="parameters.productId" global="true"/>
                 <entity-one entity-name="Product" value-field="product"/>
                 <set field="product" from-field="product" global="true"/>
@@ -1015,36 +1018,6 @@ under the License.
             </widgets>
         </section>
     </screen>
-
-    <!-- Changes by Vortex, larry -->
-    <screen name="EditProductIndustrialAttributes">
-        <section>
-            <actions>
-                <set field="titleProperty" value="PageTitleEditProductIndustrialAttributes"/>
-                <set field="tabButtonItem" value="EditProductIndustrialAttributes"/>
-                <set field="labelTitleProperty" value="ProductIndustrialAttributes"/>
-
-                <entity-and entity-name="ProductAttribute" list="productAttributes">
-                    <field-map field-name="productId" from-field="parameters.productId"/>
-                </entity-and>
-                <entity-and entity-name="ProductIndustrialAttrDef" list="productIndustrialAttrDefs" filter-by-date="true">
-                    <field-map field-name="productIndustrialType" from-field="parameters.industrialType"/>
-                </entity-and>
-            </actions>
-            <widgets>
-                <decorator-screen name="CommonProductDecorator" location="${parameters.productDecoratorLocation}">
-                    <decorator-section name="body">
-                        <screenlet title="${uiLabelMap.PageTitleEditProductIndustrialAttributes}">
-                            <platform-specific>
-                                <html><html-template location="component://industrial/template/product/EditProductIndustrialAttribute.ftl"/></html>
-                            </platform-specific>
-                        </screenlet>
-                    </decorator-section>
-                </decorator-screen>
-            </widgets>
-        </section>
-    </screen>
-    <!-- End Changes -->
 
     <screen name="EditProductAssoc">
         <section>

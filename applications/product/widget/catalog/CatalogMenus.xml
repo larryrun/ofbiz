@@ -395,7 +395,6 @@ under the License.
         <menu-item name="EditProductIndustrialAttributes" title="${uiLabelMap.ProductIndustrialAttributes}">
             <link target="EditProductIndustrialAttributes">
                 <parameter param-name="productId"/>
-                <parameter param-name="industrialType" from-field="product.industrialType"/>
             </link>
         </menu-item>
         <!-- Changes End -->
