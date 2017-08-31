@@ -5,7 +5,7 @@
     <form name="ProductIndustrialCategoryEditForm" type="single" target="processProductIndustrialCategoryEditForm">
         <field name="productId"><hidden/></field>
         <field name="industrialCategoryId" title="${uiLabelMap.ProductIndustrialCategory}" entry-name="product.industrialCategoryId">
-            <drop-down allow-empty="false" current="selected">
+            <drop-down allow-empty="true" current="selected">
                 <entity-options description="${categoryName}"
                                 entity-name="ProductIndustrialCategory"
                                 key-field-name="categoryId"
@@ -17,11 +17,24 @@
         <field name="submitButton" title="${uiLabelMap.CommonUpdate}"><submit button-type="button"/></field>
     </form>
 
-    <form name="ProductIndustrialAttrEditForm" type="multi" list-name="productIndustrialAttrDefs" target="processProductIndustrialAttrEditForm">
+    <form name="ProductIndustrialAttrEditForm" type="multi" list-name="productIndustrialAttrDefs" target="processProductIndustrialAttributeEditForm" hide-header="true">
+        <field name="_rowSubmit"><hidden value="Y"/></field>
         <field name="productId"><hidden/></field>
-        <field name="attrDefId"><hidden value="${attrDefId}"/></field>
-        <field name="attrName" title="${uiLabelMap.ProductIndustrialAttributes}"><display/></field>
-        <field name="attrValue" title="${uiLabelMap.ProductIndustrialAttributesValue}"><text/></field>
+        <field name="attrDefId"><hidden/></field>
+        <field name="attrName"><display/></field>
+        <field name="attrValue" use-when="attrType == 'STRING'" title="${attrName}"><text/></field>
+        <field name="enumId" use-when="attrType == 'ENUM'" title="${attrName}">
+            <drop-down allow-empty="true" current="selected">
+                <entity-options description="${displayName} - ${enumCode}"
+                                entity-name="ProductIndustrialAttrValEnum"
+                                key-field-name="enumId"
+                                filter-by-date="true">
+                    <entity-constraint name="attrDefId" value="${attrDefId}"/>
+                    <entity-order-by field-name="sortOrder"/>
+                </entity-options>
+            </drop-down>
+        </field>
+        <field name="unit"><display/></field>
         <field name="submitButton" title="${uiLabelMap.CommonUpdate}"><submit button-type="button"/></field>
     </form>
 

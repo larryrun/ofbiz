@@ -5,4 +5,39 @@
     <vendor>Vortex</vendor>
     <version>1.0</version>
 
+    <service name="interfaceProductIndustrialAttr" default-entity-name="ProductIndustrialAttr" engine="interface" location="" invoke="">
+        <auto-attributes include="nonpk" mode="IN" optional="true">
+            <exclude field-name="createdByUserLogin"/>
+            <exclude field-name="lastModifiedByUserLogin"/>
+        </auto-attributes>
+        <override name="productId" optional="false"/>
+        <override name="attrDefId" optional="false"/>
+    </service>
+
+    <service name="createProductIndustrialAttr" engine="simple" default-entity-name="ProductIndustrialAttr"
+             location="component://industrial/minilang/product/ProductIndustrialServices.xml" invoke="createProductIndustrialAttr">
+        <description>Create ProductIndustrialAttr</description>
+        <implements service="interfaceProductIndustrialAttr"/>
+        <auto-attributes include="pk" mode="INOUT" optional="true"/>
+    </service>
+
+    <service name="updateProductIndustrialAttr" engine="simple" default-entity-name="ProductIndustrialAttr"
+             location="component://industrial/minilang/product/ProductIndustrialServices.xml" invoke="updateProductIndustrialAttr">
+        <description>Update ProductIndustrialAttr</description>
+        <implements service="interfaceProductIndustrialAttr"/>
+        <auto-attributes include="pk" mode="IN" optional="false"/>
+    </service>
+
+    <service name="deleteProductIndustrialAttr" engine="simple"
+             location="component://industrial/minilang/product/ProductIndustrialServices.xml" invoke="deleteProductIndustrialAttr">
+        <description>Delete ProductIndustrialAttr</description>
+        <attribute name="attrId" type="String" mode="IN"/>
+    </service>
+
+    <service name="deleteAllProductIndustrialAttrOfProduct" engine="simple"
+             location="component://industrial/minilang/product/ProductIndustrialServices.xml" invoke="deleteAllProductIndustrialAttrOfProduct">
+        <description>Delete All ProductIndustrialAttr by Product Id</description>
+        <attribute name="productId" type="String" mode="IN"/>
+    </service>
+
 </services>

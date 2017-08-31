@@ -8,7 +8,7 @@
     </context-param>
     <context-param>
         <param-name>localDispatcherName</param-name>
-        <param-value>learning</param-value>
+        <param-value>industrial</param-value>
     </context-param>
     <filter>
         <filter-name>ContextFilter</filter-name>

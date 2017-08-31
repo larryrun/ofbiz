@@ -1,6 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <simple-methods xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                xmlns="http://ofbiz.apache.org/Simple-Method" xsi:schemaLocation="http://ofbiz.apache.org/Simple-Method http://ofbiz.apache.org/dtds/simple-methods.xsd">
+                xmlns="http://ofbiz.apache.org/Simple-Method"
+                xsi:schemaLocation="http://ofbiz.apache.org/Simple-Method http://ofbiz.apache.org/dtds/simple-methods.xsd">
 
+
+    <simple-method method-name="createProductIndustrialAttr">
+        <set field="callingMethodName" value="createProductIndustrialAttr" />
+        <set field="checkAction" value="UPDATE" />
+        <call-simple-method method-name="checkProductRelatedPermission" xml-resource="component://product/minilang/product/product/ProductServices.xml"/>
+        <check-errors/>
+
+        <make-value entity-name="ProductIndustrialAttr" value-field="newEntity"/>
+        <make-next-seq-id value-field="newEntity" seq-field-name="attrId"/>
+        <set-nonpk-fields value-field="newEntity" map="parameters"/>
+
+        <now-timestamp field="nowTimestamp"/>
+        <set from-field="userLogin.userLoginId" field="newEntity.lastModifiedByUserLogin"/>
+        <set from-field="userLogin.userLoginId" field="newEntity.createdByUserLogin"/>
+
+        <create-value value-field="newEntity"/>
+    </simple-method>
+
+    <simple-method method-name="updateProductIndustrialAttr">
+        <set field="callingMethodName" value="updateProductIndustrialAttr" />
+        <set field="checkAction" value="UPDATE" />
+        <call-simple-method method-name="checkProductRelatedPermission" xml-resource="component://product/minilang/product/product/ProductServices.xml"/>
+        <check-errors/>
+
+        <entity-one entity-name="ProductIndustrialAttr" value-field="lookedUpValue"/>
+        <set-nonpk-fields value-field="lookedUpValue" map="parameters"/>
+
+        <set from-field="userLogin.userLoginId" field="lookedUpValue.lastModifiedByUserLogin"/>
+
+        <store-value value-field="lookedUpValue"/>
+    </simple-method>
+
+    <simple-method method-name="deleteProductIndustrialAttr">
+        <set field="callingMethodName" value="deleteProductIndustrialAttr" />
+        <set field="checkAction" value="UPDATE" />
+        <call-simple-method method-name="checkProductRelatedPermission" xml-resource="component://product/minilang/product/product/ProductServices.xml"/>
+        <check-errors/>
+
+        <remove-by-and entity-name="ProductIndustrialAttr" map="parameters"/>
+    </simple-method>
+
+    <simple-method method-name="deleteAllProductIndustrialAttrOfProduct">
+        <set field="callingMethodName" value="deleteAllProductIndustrialAttrOfProduct" />
+        <set field="checkAction" value="UPDATE" />
+        <call-simple-method method-name="checkProductRelatedPermission" xml-resource="component://product/minilang/product/product/ProductServices.xml"/>
+        <check-errors/>
+
+        <remove-by-and entity-name="ProductIndustrialAttr" map="parameters"/>
+    </simple-method>
 
 </simple-methods>

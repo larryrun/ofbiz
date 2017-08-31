@@ -9,8 +9,11 @@
         <field name="categoryName" type="name"/>
         <field name="categoryCode" type="name"/>
         <field name="sortOrder" type="numeric"/>
+
         <field name="fromDate" type="date-time"/>
         <field name="thruDate" type="date-time"/>
+        <field name="createdByUserLogin" type="id-vlong"/>
+        <field name="lastModifiedByUserLogin" type="id-vlong"/>
 
         <prim-key field="categoryId"/>
     </entity>
@@ -22,10 +25,14 @@
         <field name="categoryId" type="id"/>
         <field name="attrName" type="name"/>
         <field name="attrType" type="name"/>
+        <field name="unit" type="name"/>
         <field name="sortOrder" type="numeric"/>
         <field name="attrDescription" type="description"/>
+
         <field name="fromDate" type="date-time"/>
         <field name="thruDate" type="date-time"/>
+        <field name="createdByUserLogin" type="id-vlong"/>
+        <field name="lastModifiedByUserLogin" type="id-vlong"/>
 
         <prim-key field="attrDefId"/>
 
@@ -43,8 +50,11 @@
         <field name="enumValue" type="value"/>
         <field name="enumCode" type="name"/>
         <field name="sortOrder" type="numeric"/>
+
         <field name="fromDate" type="date-time"/>
         <field name="thruDate" type="date-time"/>
+        <field name="createdByUserLogin" type="id-vlong"/>
+        <field name="lastModifiedByUserLogin" type="id-vlong"/>
 
         <prim-key field="enumId"/>
 
@@ -62,6 +72,9 @@
         <field name="attrValue" type="value"/>
         <field name="code" type="value"/>
         <field name="enumId" type="value"/>
+
+        <field name="createdByUserLogin" type="id-vlong"/>
+        <field name="lastModifiedByUserLogin" type="id-vlong"/>
 
         <prim-key field="attrId"/>
 

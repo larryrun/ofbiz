@@ -14,9 +14,9 @@
         <response name="success" type="view" value="EditProductIndustrialAttributes"/>
         <response name="error" type="view" value="EditProductIndustrialAttributes"/>
     </request-map>
-    <request-map uri="saveProductIndustrialAttribute">
+    <request-map uri="processProductIndustrialAttributeEditForm">
         <security https="true" auth="true"/>
-        <event type="service" path="component://industrial" invoke="saveProductIndustrialAttribute"/>
+        <event type="java" path="com.vortex.erp.industrial.product.ProductIndustrialAttrEvents" invoke="processEditProductIndustrialAttr"/>
         <response name="success" type="view" value="EditProductIndustrialAttributes"/>
         <response name="error" type="view" value="EditProductIndustrialAttributes"/>
     </request-map>

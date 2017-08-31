@@ -6,7 +6,7 @@
         <section>
             <actions>
                 <set field="titleProperty" value="PageTitleEditProductIndustrialAttributes"/>
-                <set field="tabButtonItem" value="EditProductIndustrialAttributes"/>
+                <set field="tabButtonItem" value="ProductIndustrialAttributes"/>
                 <set field="labelTitleProperty" value="ProductIndustrialAttributes"/>
 
                 <set field="productId" from-field="parameters.productId"/>
@@ -28,11 +28,11 @@
                         <screenlet title="${uiLabelMap.PageTitleEditProductIndustrialAttributes}">
                             <include-form name="ProductIndustrialAttrEditForm" location="component://industrial/widget/product/IndustrialAttrForms.xml"/>
                         </screenlet>
-                        <screenlet title="${uiLabelMap.PageTitleEditProductIndustrialAttributes}">
+                        <!-- screenlet title="${uiLabelMap.PageTitleEditProductIndustrialAttributes}">
                             <platform-specific>
                                 <html><html-template location="component://industrial/template/product/EditProductIndustrialAttribute.ftl"/></html>
                             </platform-specific>
-                        </screenlet>
+                        </screenlet -->
                     </decorator-section>
                 </decorator-screen>
             </widgets>

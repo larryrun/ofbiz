@@ -22,13 +22,6 @@
         <value xml:lang="zh-TW">行業屬性</value>
     </property>
 
-    <property key="ProductIndustrialAttributesValue">
-        <value xml:lang="en">Attribute Value</value>
-        <value xml:lang="zh">属性值</value>
-        <value xml:lang="zh-CN">属性值</value>
-        <value xml:lang="zh-TW">屬性值</value>
-    </property>
-
     <property key="ProductIndustrialCategory">
         <value xml:lang="en">Category</value>
         <value xml:lang="zh">类别</value>
